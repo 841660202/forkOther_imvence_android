@@ -1,80 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="15dp"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/linearlayout_water_selector"
     android:clickable="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingTop="15dp"
+    android:paddingRight="10dp">
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/news_avatar"
-            android:layout_height="38dp"
             android:layout_width="38dp"
-            fresco:roundedCornerRadius="3dp"
-            />
+            android:layout_height="38dp"
+            fresco:roundedCornerRadius="3dp" />
+
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/news_nickname"
-                android:layout_height="22dp"
                 android:layout_width="match_parent"
-                android:textSize="16dp"
-                android:textStyle="bold"
+                android:layout_height="22dp"
                 android:textColor="@color/black"
-                />
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/news_main"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/news_txt"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:textSize="14dp"
+                    android:layout_height="wrap_content"
                     android:lineSpacingExtra="5dp"
+                    android:text=""
                     android:textColor="@color/msg_nickname"
-                    android:text="" />
+                    android:textSize="14dp" />
+
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/news_thumb"
-                    android:layout_marginTop="6dp"
-                    android:layout_height="86dp"
                     android:layout_width="86dp"
-                    />
+                    android:layout_height="86dp"
+                    android:layout_marginTop="6dp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/news_addtime"
-                android:layout_height="20dp"
                 android:layout_width="match_parent"
-                android:textSize="12dp"
-                android:textColor="@color/msg_content"
+                android:layout_height="20dp"
                 android:text=""
-                />
+                android:textColor="@color/msg_content"
+                android:textSize="12dp" />
 
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_height="0.5dp"
         android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:layout_marginTop="20dp"
-        android:background="@color/msg_split"
-        />
+        android:background="@color/msg_split" />
 </LinearLayout>

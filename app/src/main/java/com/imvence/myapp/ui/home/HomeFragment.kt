@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
             this.initRequest()
 
         }
-        // 监听recycle滚动
+        /**监听recycle滚动*/
         messageContent.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 if(!messageContent.canScrollVertically(0)){

@@ -9,13 +9,13 @@ import android.view.MotionEvent
 import android.view.View
 /**继承的是view*/
 class FriendsQuickIndex(context: Context, attrs: AttributeSet, defStyleAttr:Int): View(context, attrs, defStyleAttr) {
-    private var scanvas:Canvas?=null
-    private var paint = Paint()
-    private var groups = mutableMapOf<Int, String>()
-    private var cellWidth = 0
-    private var cellHeight = 0
-    private var indexChangeListener:OnIndexChangeListener?=null
-    private var curIndex = -1
+    private var scanvas:Canvas?=null // 画布
+    private var paint = Paint() // 笔
+    private var groups = mutableMapOf<Int, String>() // 字母数据
+    private var cellWidth = 0 // 元素宽度
+    private var cellHeight = 0 // 元素高度
+    private var indexChangeListener:OnIndexChangeListener?=null // 下标改变监听
+    private var curIndex = -1 // 下标
 
     constructor(context: Context, attrs: AttributeSet):this(context,attrs,0){}
 /**绘制*/
@@ -23,10 +23,12 @@ class FriendsQuickIndex(context: Context, attrs: AttributeSet, defStyleAttr:Int)
         scanvas = canvas
 
         for(i in 0 until groups.size){
-            val bound = Rect()
+            val bound = Rect() // 矩形
             paint.getTextBounds(groups[i], 0, 1, bound)
+            // 确定每个文字在画布中的位置
             val x = (cellWidth-bound.width())/2
             val y = i*cellHeight + (cellWidth+bound.width())/2
+            // 画布上绘制文字
             scanvas!!.drawText(groups[i]!!, x.toFloat(), y.toFloat(), paint)
         }
     }

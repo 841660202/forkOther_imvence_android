@@ -34,7 +34,7 @@ class FriendsFragment : Fragment() {
         /**侧边字母导航*/
         quickIndexView = root.findViewById<FriendsQuickIndex>(R.id.quickIndexView)
 
-
+        /**监听点击字母=>滚动*/
         quickIndexView.setOnIndexChangeListener(object : FriendsQuickIndex.OnIndexChangeListener {
             override fun onIndexChange(group: String?) {
                 var count = 0

@@ -4,8 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1648148148148148" />
+        <entry key="app/src/main/res/drawable/linearlayout_water_selector.xml" value="0.272" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.161231884057971" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/fragment_mine.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/friends_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/group_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/msg_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/news_pic_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/news_txt_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/news_txtpic_item.xml" value="0.2671875" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2671875" />
       </map>
     </option>
   </component>

@@ -30,8 +30,14 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        /**设置未读消息数量*/
         navView.itemIconTintList = null //去掉图标的默认背景色
-
+        val menuItemId = navView.menu.getItem(0).itemId
+        var badge = navView.getOrCreateBadge(menuItemId)
+        badge.isVisible = true
+        // An icon only badge will be displayed unless a number is set:
+        badge.number = 10000 // 超过999 会截取 999+
+        /**设置未读消息数量 end*/
         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -49,40 +55,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     //监听tabbar切换状态
-    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        /*
-        val titleMap = mutableMapOf<Int, String>(
-            R.id.navigation_home to this.resources.getString(R.string.tabbar_home_title),
-            R.id.navigation_friends to this.resources.getString(R.string.tabbar_friends_title),
-            R.id.navigation_news to this.resources.getString(R.string.tabbar_news_title),
-            R.id.navigation_mine to this.resources.getString(R.string.tabbar_mine_title)
-        )
-        */
+    private val onNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            /*
+            val titleMap = mutableMapOf<Int, String>(
+                R.id.navigation_home to this.resources.getString(R.string.tabbar_home_title),
+                R.id.navigation_friends to this.resources.getString(R.string.tabbar_friends_title),
+                R.id.navigation_news to this.resources.getString(R.string.tabbar_news_title),
+                R.id.navigation_mine to this.resources.getString(R.string.tabbar_mine_title)
+            )
+            */
 
-        //toolbar.title = titleMap[item.itemId]
+            //toolbar.title = titleMap[item.itemId]
 
-        val menuMap = mutableMapOf<Int, Int>(
-            R.id.navigation_home to R.menu.home_friends_menu,
-            R.id.navigation_friends to R.menu.home_friends_menu,
-            R.id.navigation_news to R.menu.news_mine_menu,
-            R.id.navigation_mine to R.menu.news_mine_menu
-        )
+            val menuMap = mutableMapOf<Int, Int>(
+                R.id.navigation_home to R.menu.home_friends_menu,
+                R.id.navigation_friends to R.menu.home_friends_menu,
+                R.id.navigation_news to R.menu.news_mine_menu,
+                R.id.navigation_mine to R.menu.news_mine_menu
+            )
 
-        toolbar.menu?.clear()
-        menuMap[item.itemId]?.let { toolbar.inflateMenu(it) }
+            toolbar.menu?.clear()
+            menuMap[item.itemId]?.let { toolbar.inflateMenu(it) }
 
-        toolbar.title = item.title
+            toolbar.title = item.title
 
-        when(item.itemId){
-            R.id.navigation_home->navController.navigate(R.id.navigation_home)
-            R.id.navigation_friends->navController.navigate(R.id.navigation_friends)
-            R.id.navigation_news->navController.navigate(R.id.navigation_news)
-            R.id.navigation_mine->navController.navigate(R.id.navigation_mine)
+            when (item.itemId) {
+                R.id.navigation_home -> navController.navigate(R.id.navigation_home)
+                R.id.navigation_friends -> navController.navigate(R.id.navigation_friends)
+                R.id.navigation_news -> navController.navigate(R.id.navigation_news)
+                R.id.navigation_mine -> navController.navigate(R.id.navigation_mine)
+            }
+
+            return@OnNavigationItemSelectedListener true
+
         }
-
-        return@OnNavigationItemSelectedListener true
-
-    }
 
     //设置状态栏字体颜色
     private fun changeStatusBarColor(setDark: Boolean) {

@@ -10,14 +10,14 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/newsRefresh"
-        android:orientation="vertical"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/newsContent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        />
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
     android:paddingBottom="?attr/actionBarSize"
     android:id="@+id/FriendsFragment"
     tools:context=".ui.friends.FriendsFragment">
-<!--RecyclerView控件-->
+    <!--RecyclerView控件-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/friendsContent"
         android:layout_height="match_parent"

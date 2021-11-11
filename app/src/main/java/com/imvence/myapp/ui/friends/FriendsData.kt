@@ -13,3 +13,20 @@ data class FriendsItemData(
     val id:Int,
     val name:String
 )
+
+/**
+ *
+ *
+{
+    datas: [
+        {
+            friends: [{
+                id: '',
+                name: ''
+            }],
+            groupIndex: ''
+        }
+    ]
+}
+ */
+
